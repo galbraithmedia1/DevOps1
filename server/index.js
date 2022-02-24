@@ -33,6 +33,8 @@ app.post('/api/student', (req, res)=>{
 
     res.status(200).send(students)
 })
+rollbar.log('test')
+
 
 app.use(rollbar.errorHandler())
 
