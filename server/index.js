@@ -19,7 +19,7 @@ app.get('/', (req,res)=>{
 })
 
 
-let students =[]
+let students = []
 
 app.post('/api/student', (req, res)=>{
     let {name} = req.body
@@ -27,8 +27,8 @@ app.post('/api/student', (req, res)=>{
 
     students.push(name)
 
+    rollbar.log('student was added successfully', {author: 'Scott', type: 'manual', student: name})
 
-    rollbar.log('studentw as added successfully', {author: 'Taylor', type: 'manual', student: name})
     res.status(200).send(students)
 })
 
